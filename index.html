@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquarismo para Iniciantes</title>
+    <style>
+        /* Estilos baseados no seu design personalizado */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f9ff;
+            color: #222;
+        }
+
+        header {
+            background: #0077b6;
+            padding: 15px;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .hero {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #0077b6;
+        }
+
+        .hero p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            color: #0077b6;
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+            background: #023e8a;
+            color: white;
+        }
+
+        /* Estilos para controle das páginas simuladas */
+        .section-content {
+            display: none;
+        }
+
+        .section-content.active {
+            display: block;
+        }
+
+        /* Formatação para as listas de guias e formulários */
+        .content-block {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .content-block ul {
+            line-height: 2.2;
+            color: #444;
+            font-size: 1.1rem;
+        }
+
+        .content-block li {
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            background: #eef7ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 5px solid #0077b6;
+            text-align: center;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .btn-submit {
+            background: #0077b6;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background: #023e8a;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a onclick="navigate('home')">Início</a>
+        <a onclick="navigate('guia')">Guia Básico</a>
+        <a onclick="navigate('peixes')">Peixes Ideais</a>
+        <a onclick="navigate('equipamentos')">Equipamentos</a>
+        <a onclick="navigate('contato')">Contato</a>
+    </nav>
+</header>
+
+<div class="container">
+    
+    <!-- SEÇÃO: INÍCIO -->
+    <div id="home" class="section-content active">
+        <div class="hero">
+            <h1>🐠 Aquarismo para Iniciantes</h1>
+            <p>Aprenda como montar seu primeiro aquário de água doce com segurança e simplicidade.</p>
+        </div>
+
+        <div class="card-grid">
+            <div class="card" onclick="navigate('guia')" style="cursor: pointer;">
+                <h2>Guia Completo</h2>
+                <p>Veja o passo a passo para montar seu aquário do zero.</p>
+            </div>
+
+            <div class="card" onclick="navigate('peixes')" style="cursor: pointer;">
+                <h2>Peixes Recomendados</h2>
+                <p>Conheça as melhores espécies para iniciantes.</p>
+            </div>
+
+            <div class="card" onclick="navigate('equipamentos')" style="cursor: pointer;">
+                <h2>Equipamentos</h2>
+                <p>Filtro, termostato, iluminação e tudo o que você precisa.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEÇÃO: GUIA BÁSICO -->
+    <div id="guia" class="section-content">
+        <div class="hero">
+            <h1>📌 Guia Básico do Aquarismo</h1>
+            <p>Montar um aquário exige paciência e planejamento. Veja os passos essenciais:</p>
+        </div>
+        <div class="content-block">
+            <ul>
+                <li>Escolha um aquário de pelo menos 40 litros</li>
+                <li>Instale filtro e termostato</li>
+                <li>Use substrato e decoração segura</li>
+                <li>Faça a ciclagem da água por 20 a 30 dias</li>
+                <li>Adicione os peixes aos poucos</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SEÇÃO: PEIXES IDEAIS -->
+    <div id="peixes" class="section-content">
+        <div class="hero">
+            <h1>🐟 Peixes Ideais para Iniciantes</h1>
+            <p>Conheça as melhores espécies para começar seu aquário com segurança.</p>
+        </div>
+        <div class="card-grid">
+            <div class="card">
+                <h2>Betta</h2>
+                <p>Resistente e bonito, ideal para aquários pequenos.</p>
+            </div>
+            <div class="card">
+                <h2>Molinésia</h2>
+                <p>Peixe fácil de cuidar e ótimo para iniciantes.</p>
+            </div>
+            <div class="card">
+                <h2>Tetra Neon</h2>
+                <p>Colorido e vive bem em cardumes.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEÇÃO: EQUIPAMENTOS -->
+    <div id="equipamentos" class="section-content">
+        <div class="hero">
+            <h1>⚙️ Equipamentos Essenciais</h1>
+            <p>A tecnologia básica para manter a vida aquática estável e saudável.</p>
+        </div>
+        <div class="content-block">
+            <ul>
+                <li>Filtro biológico e mecânico</li>
+                <li>Termostato para manter a temperatura</li>
+                <li>Iluminação LED</li>
+                <li>Substrato e decoração natural</li>
+                <li>Teste de pH e amônia</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SEÇÃO: CONTATO -->
+    <div id="contato" class="section-content">
+        <div class="hero">
+            <h1>📩 Contato</h1>
+            <p>Quer tirar dúvidas ou sugerir conteúdo?</p>
+        </div>
+        <div class="content-block">
+            <div class="contact-info">
+                <strong>Email:</strong> contato@aquarismo.com
+            </div>
+            <form onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso!'); this.reset();">
+                <input type="text" placeholder="Nome Completo" required>
+                <input type="email" placeholder="Seu melhor e-mail" required>
+                <textarea rows="4" placeholder="Como podemos ajudar?" required></textarea>
+                <button type="submit" class="btn-submit">Enviar Mensagem</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 - Aquarismo para Iniciantes</p>
+</footer>
+
+<script>
+    function navigate(sectionId) {
+        // Oculta todas as seções
+        const sections = document.querySelectorAll('.section-content');
+        sections.forEach(s => s.classList.remove('active'));
+
+        // Mostra a seção desejada
+        const target = document.getElementById(sectionId);
+        if (target) {
+            target.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+</script>
+
+</body>
+</html>
